@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Alt+Shift+Me</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <style>
+    :root {
+      --g-blue: #4285F4;
+      --g-red: #DB4437;
+      --g-yellow: #F4B400;
+      --g-green: #0F9D58;
+      --g-white: #fff;
+      --g-black: #202124;
+      --g-grey: #F1F3F4;
+      --g-grey-500: #9AA0A6;
+      --g-light-blue: #D2E3FC;
+      --g-light-yellow: #FEEFC3;
+      --g-light-green: #CEEAD6;
+      --g-shadow: rgba(66,133,244,0.15);
+    }
+    
+    /* This new style helps the logo and title sit side-by-side */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px; /* Adjust the space between logo and title */
+    }
+
+    .logo-img {
+      width: 150px; 
+      height: auto; 
+      max-width: 100%; 
+      
+      /* You might want to make it smaller for the navbar */
+      /* Try uncommenting this line below: */
+      /* height: 50px; width: auto; */
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--g-grey);
+      margin: 0;
+      color: var(--g-black);
+    }
+    .navbar {
+      background: linear-gradient(90deg, var(--g-blue), var(--g-green));
+      color: var(--g-white);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: fadeDown 1s;
+    }
+    @keyframes fadeDown {
+      0% { opacity: 0; transform: translateY(-45px);}
+      80% { opacity: 1; transform: translateY(5px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+    .navbar h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: color 0.25s;
+    }
+    .navbar h1:hover {
+      color: var(--g-yellow);
+    }
+    .navbar nav a {
+      text-decoration: none;
+      color: var(--g-white);
+      margin-left: 2rem;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.18s;
+    }
+    .navbar nav a::after {
+      content: "";
+      display: block;
+      margin: auto;
+      width: 0%;
+      height: 2px;
+      background: var(--g-yellow);
+      transition: width .3s;
+    }
+    .navbar nav a:hover {
+      color: var(--g-yellow);
+    }
+    .navbar nav a:hover::after {
+      width: 100%;
+    }
+    .hero {
+      background: linear-gradient(120deg, var(--g-red), var(--g-yellow), var(--g-blue));
+      color: var(--g-white);
+      text-align: center;
+      padding: 4rem 1rem 3.5rem 1rem;
+      min-height: 350px;
+      animation: fadeInHero 1.2s;
+    }
+    @keyframes fadeInHero {
+      from {opacity: 0; transform: scale(1.05);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    .hero h2 {
+      font-size: 2.6rem;
+      margin-bottom: 1.35rem;
+      animation: textPop 0.8s;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      letter-spacing: 0.5px;
+      animation: textPop 1.1s;
+    }
+    @keyframes textPop {
+      0% { opacity: 0; transform: scale(1.18);}
+      100% { opacity: 1; transform: scale(1);}
+    }
+    .scroll-btn {
+      margin-top: 2.2rem;
+      background: var(--g-yellow);
+      color: var(--g-black);
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 0.7rem 2.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 2px 16px var(--g-shadow);
+      outline: none;
+      transition: background 0.3s;
+      animation: bounceBtn 1.8s infinite;
+    }
+    @keyframes bounceBtn {
+      0%, 100% { transform: translateY(0);}
+      50% { transform: translateY(-7px);}
+    }
+    .scroll-btn:hover {
+      background: var(--g-green);
+      color: var(--g-white);
+    }
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      padding: 2.7rem;
+      background: var(--g-white);
+      justify-content: center;
+      animation: fadeMain 1s;
+    }
+    @keyframes fadeMain {
+      from {opacity: 0; transform: scale(0.99);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    .section {
+      background: var(--g-light-blue);
+      border-radius: 1.4rem;
+      box-shadow: 0 4px 22px var(--g-shadow);
+      padding: 1.65rem 2.1rem;
+      min-width: 270px;
+      max-width: 470px;
+      flex: 1 1 320px;
+      transition: transform 0.22s, box-shadow 0.22s;
+      animation: fadeUp 1.2s;
+    }
+    .section:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 30px rgba(66,133,244,0.19);
+      background: var(--g-grey);
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(45px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .section h3 {
+      margin-top: 0;
+      margin-bottom: 0.74rem;
+      color: var(--g-blue);
+      font-size: 1.45rem;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    .section:hover h3 {
+      color: var(--g-red);
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-bottom: 0.8rem;
+    }
+    .skill-chip {
+      background: var(--g-yellow);
+      color: var(--g-black);
+      border-radius: 100px;
+      padding: 0.33rem 1.1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 0.3rem;
+      box-shadow: 0 0 7px var(--g-light-green);
+      transition: background 0.15s, color 0.15s;
+      cursor: pointer;
+      animation: chipIn 0.9s;
+    }
+    .skill-chip:hover {
+      background: var(--g-green);
+      color: var(--g-white);
+    }
+    @keyframes chipIn {
+      from { opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .project-card {
+      background: linear-gradient(90deg, var(--g-white), var(--g-light-blue));
+      border: 1.5px solid var(--g-blue);
+      border-radius: 1rem;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1rem;
+      transition: box-shadow 0.22s;
+      box-shadow: 0 1px 8px var(--g-shadow);
+      animation: fadeUp 1.3s;
+    }
+    .project-card:hover {
+      box-shadow: 0 6px 22px var(g-shadow);
+    }
+    .footer {
+      background: linear-gradient(90deg, var(--g-green), var(--g-blue));
+      color: var(--g-white);
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 5px solid var(--g-yellow);
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      animation: fadeFooter 1.2s;
+    }
+    @keyframes fadeFooter {
+      from {opacity: 0; transform: scale(1.05);}
+      to {opacity: 1; transform: scale(1);}
+    }
+    .footer a {
+      color: var(--g-yellow);
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.2s;
+    }
+    .footer a:hover {
+      color: var(--g-red);
+    }
+    @media (max-width: 900px) {
+      .main {
+        flex-direction: column;
+        padding: 1.6rem;
+        gap: 1.2rem;
+      }
+      .section {
+        max-width: 98vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="LGA.png" alt="Alt+Shift+Me portfolio logo" class="logo-img">
+      <h1 onclick="window.scrollTo({top:0, behavior:'smooth'})">Alt+Shift+Me</h1>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <h2>Welcome to Alt+Shift+Me</h2>
+    <p>I am the creator of the portfolio website Alt+Shift+Me. I am S Anirudh. I present this webpage as the project that the GDG posted for the recruitment</p>
+    <p>I belong to ISE Department 3rd sem Section B</p>
+    <p>Through this website I would like to shout out a Hello world to all the tech enthusiasts and all the people of one of the best tech community</p>
+    <p>I am really aspiring open to learn and innovate with the help of AI ("NOT TO COPY FROM AI DIRECTLY ") I will make the AI work for me being a great resource for the community</p>
+    
+    <button class="scroll-btn" onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">
+      Explore My Skills ↓
+    </button>
+  </section>
+
+  <main class="main">
+    <section class="section" id="skills">
+      <h3>Skills & Expertise</h3>
+      <div class="skills-list">
+        <span class="skill-chip">Web Design</span>
+        <span class="skill-chip">Material CSS</span>
+        <span class="skill-chip">Animations</span>
+        <span class="skill-chip">HTML</span>
+        <span class="skill-chip">CSS</span>
+        <span class="skill-chip">Java</span>
+        <span class="skill-chip">C and C++</span>
+        <span class="skill-chip">Logical reasoning</span>
+        <span class="skill-chip">Leadership and Timemanagement</span>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <h3>Featured Projects</h3>
+      <div class="project-card">
+        <strong>Portfolio Website</strong> — Created a vivid, animated profile site with Google’s official colors to follow the rules of the google developer club , entrance/fade and hover effects. Interactive design elements for best engagement.
+      </div>
+      <div class="project-card">
+        <strong>Snake game using C++ OOPS </strong> — Built a snake game using the data structures and using Raylib software for the graphics.
+      </div>
+      <div class="project-card">
+        <strong>Blog website</strong> — Created a blog website a immersive website for blogging all the important events of an individual.
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h3>Contact & Connect</h3>
+      <p>Email: <a href="mailto:your.email@example.com" style="color:var(--g-blue);">anirudh11042005@gmail.com</a></p>
+      <p>Let's catch up professionally on Linkedin: <a href="#" style="color:var(--g-blue);">www.linkedin.com/in/sanipediatech</a></p>
+      <p>GitHub: <a href="#" style="color:var(--g-blue);">https://github.com/dashboard</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Alt+Shift+Me · Made with <span style="color:var(--g-yellow);">Google</span> colors
+    <br>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </footer>
+</body>
+</html>
