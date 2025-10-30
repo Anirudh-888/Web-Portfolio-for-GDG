@@ -16,7 +16,9 @@ I remember attending a GDG intro session workshop that google developers are all
 <br>
 In this website I have strictly stuck on to the colours prescribed by the google developer club and then implemented in my webpage. 
 <br>
-This website is named as Alt+Shift+Me. This name was decided that all the people atleast once in their life time meet a shift making them a great resource. So, this portfolio shows that how we are shifted to a new dimension and what are the skills that made us upshift in the tech domain.
+<h2>This website is named as Alt+Shift+Me. </h2>
+<br>
+<p>This name was decided that all the people atleast once in their life time meet a shift making them a great resource. So, this portfolio shows that how we are shifted to a new dimension and what are the skills that made us upshift in the tech domain.</p>
 <br>
 Hoping to join this most advanced and the most precious tech organization
 <br>
