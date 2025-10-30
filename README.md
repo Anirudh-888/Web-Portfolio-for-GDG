@@ -6,7 +6,7 @@ USN: 1MJ24IS077
 <br>
 I belong to the ISE department, studiying in the third semester B section.
 <br>
-I am a a tech enthusiast and always eager to learn and to have a sweet team work with all the other tech enthusiasts to make tech more fun and make it even more amusing with a great team work.
+I am  a tech enthusiast and always eager to learn and to have a sweet team work with all the other tech enthusiasts to make tech more fun and make it even more amusing with a great team work.
 <br>
 This is the webpage for the assignment that was given by GDG for the recruitments for the year 2025.
 <br>
